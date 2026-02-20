@@ -14,9 +14,7 @@ A single‑page AWS Cloud Practitioner study hub with practice exams, study modu
 2. Use the top navigation to switch between Dashboard, Study Guide, Practice Exam, and Flashcards.
 3. Your progress and history are saved locally in your browser.
 
-## CI
-A basic GitHub Actions workflow verifies the main HTML file exists and is non‑empty on each push and pull request.
 
 ## Notes
 - This project is a static HTML app. No backend is required.
-- If you want to host it, GitHub Pages works well.
+
