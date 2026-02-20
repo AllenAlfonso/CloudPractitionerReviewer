@@ -2,6 +2,7 @@
 
 A single‑page AWS Cloud Practitioner study hub with practice exams, study modules, and flashcards.
 
+
 ## Features
 - Practice exams (short and full) with timer, pause/resume, and results summary
 - Study guide with 13 modules and quick navigation
@@ -10,7 +11,7 @@ A single‑page AWS Cloud Practitioner study hub with practice exams, study modu
 - LocalStorage persistence for progress and history
 
 ## How To Use
-1. Open `AWS-FINAL-WORKING-COMPLETE_1.html` in your browser.
+1. Open https://allenalfonso.github.io/CloudPractitionerReviewer/ in your browser.
 2. Use the top navigation to switch between Dashboard, Study Guide, Practice Exam, and Flashcards.
 3. Your progress and history are saved locally in your browser.
 
