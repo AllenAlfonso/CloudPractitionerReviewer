@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  sanity-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Sanity check HTML
+        run: |
+          test -f AWS-FINAL-WORKING-COMPLETE_1.html
+          test -s AWS-FINAL-WORKING-COMPLETE_1.html
+          echo "HTML lines: $(wc -l < AWS-FINAL-WORKING-COMPLETE_1.html)"
