@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS Cloud Practitioner Study Hub</title>
+    <title>AWS Cloud Practitioner Reviewer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -373,16 +373,75 @@
         .cat-management { background: rgba(6, 182, 212, 0.2); color: #06B6D4; }
         .cat-application { background: rgba(249, 115, 22, 0.2); color: #F97316; }
         @media (max-width: 768px) {
+            .container { padding: 12px; }
+            .header { padding: 24px 16px; }
+            .header h1 { font-size: 1.8rem; line-height: 1.2; }
+            .stats { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+            .nav { gap: 8px; }
+            .nav-btn { padding: 10px 14px; font-size: 0.9rem; }
+            .quiz-container { padding: 20px; }
+            .exam-selector { grid-template-columns: 1fr; }
+            .exam-timer-header { flex-direction: column; align-items: flex-start; }
+            .question { font-size: 1.1rem; }
+            .question-nav-btn { width: 40px; height: 40px; }
             .quiz-actions { flex-direction: column; }
             .quiz-actions-left, .quiz-actions-right { width: 100%; }
             .flashcard-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            #study > .quiz-container > div { grid-template-columns: 1fr !important; }
+            #study > .quiz-container > div > div:first-child { position: static !important; max-height: none !important; }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 { font-size: 1.5rem; }
+            .stat-card { padding: 14px; }
+            .stat-value { font-size: 1.6rem; }
+            .nav { flex-direction: column; }
+            .nav-btn { width: 100%; }
+            .quiz-container { padding: 16px; }
+            .question-card { padding: 18px; }
+            .option { padding: 12px 14px; }
+            .question-nav-grid { max-height: 160px; padding: 12px; }
+            .question-nav-btn { width: 36px; height: 36px; font-size: 0.85rem; }
+            .btn { width: 100%; }
+            .summary-content { padding: 24px; }
+            .summary-stats { grid-template-columns: 1fr; }
+            .pause-content { padding: 28px; }
+            .flashcard { min-height: 240px; }
+            .flashcard-inner { min-height: 240px; }
+            .stats { grid-template-columns: 1fr 1fr; }
+            .exam-timer-header { gap: 8px; }
+            .exam-timer-header span { display: block; margin: 4px 0; }
+            .question-nav-grid { justify-content: flex-start; }
+            .question-nav-btn { flex: 0 0 auto; }
+            .quiz-actions-left, .quiz-actions-right { width: 100%; }
+            .quiz-actions-left .btn, .quiz-actions-right .btn { width: 100%; }
+            .exam-select-btn { padding: 24px 16px; }
+        }
+        
+        @media (max-width: 480px) {
+            #study-content {
+                padding: 18px !important;
+            }
+            #study-content p {
+                word-break: break-word;
+                overflow-wrap: anywhere;
+            }
+            #study-content h2, #study-content h3, #study-content h4 {
+                word-break: break-word;
+            }
+            #study-content ul {
+                padding-left: 20px !important;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎓 AWS Cloud Practitioner Reviewer</h1>
+            <h1>☁️ AWS Cloud Practitioner Reviewer</h1>
             <p style="margin-top: 8px; color: rgba(255,255,255,0.6); font-size: 0.85rem;">Build: 2026-02-20a</p>
         </div>
 
@@ -4188,7 +4247,7 @@ Decommission applications that are no longer used or provide business value.
 
 ---
 
-AWS CodeBuild - This where you type codes and test if their an error to be able to package your code to test and when passed it will be deployment ready. Simi to Github/ Visual Studio Code | CodeBuild = cloud compiler + test runner, like NetBeans or Visual Studio, but fully automated and scalable.
+AWS CodeBuild is a fully managed build service that compiles code, runs tests, and produces deployment packages. It2019s ideal for CI/CD pipelines because builds run automatically and scale on demand. Similar to a cloud build server that replaces local tooling like Visual Studio/NetBeans for build and test tasks.
 
 ---
 
@@ -7580,7 +7639,7 @@ Decommission applications that are no longer used or provide business value.
 
 ---
 
-AWS CodeBuild - This where you type codes and test if their an error to be able to package your code to test and when passed it will be deployment ready. Simi to Github/ Visual Studio Code | CodeBuild = cloud compiler + test runner, like NetBeans or Visual Studio, but fully automated and scalable.
+AWS CodeBuild is a fully managed build service that compiles code, runs tests, and produces deployment packages. It2019s ideal for CI/CD pipelines because builds run automatically and scale on demand. Similar to a cloud build server that replaces local tooling like Visual Studio/NetBeans for build and test tasks.
 
 ---
 
@@ -10970,7 +11029,7 @@ Decommission applications that are no longer used or provide business value.
 
 ---
 
-AWS CodeBuild - This where you type codes and test if their an error to be able to package your code to test and when passed it will be deployment ready. Simi to Github/ Visual Studio Code | CodeBuild = cloud compiler + test runner, like NetBeans or Visual Studio, but fully automated and scalable.
+AWS CodeBuild is a fully managed build service that compiles code, runs tests, and produces deployment packages. It2019s ideal for CI/CD pipelines because builds run automatically and scale on demand. Similar to a cloud build server that replaces local tooling like Visual Studio/NetBeans for build and test tasks.
 
 ---
 
@@ -11364,7 +11423,7 @@ AWS Well-Architected Tool
             
             html += '<div class="question-nav-grid">' + navGrid + '</div>';
             html += '<div class="question-card">';
-            html += '<div style="color: #00D9FF; margin-bottom: 15px;">Module ' + q.m + ' • Question ' + currentNum + ' of ' + total + multiNote + '</div>';
+            html += '<div style="color: #00D9FF; margin-bottom: 15px;">Question ' + currentNum + ' of ' + total + multiNote + '</div>';
             html += '<div class="question">' + q.q + '</div>';
             html += '<div class="options">' + opts + '</div>';
             html += '</div>';
@@ -12174,11 +12233,11 @@ AWS Well-Architected Tool
                 });
                 
                 // Headers
-                formatted = formatted.replace(/### (.+)/g, '<h4 style="color: #00D9FF; font-size: 1.1rem; margin: 24px 0 12px 0; font-weight: 800; padding-left: 12px; border-left: 4px solid #00D9FF;">$1</h4>');
-                formatted = formatted.replace(/## (.+)/g, '<h3 style="color: #FF9900; font-size: 1.3rem; margin: 30px 0 16px 0; font-weight: 900; padding-left: 16px; border-left: 5px solid #FF9900; text-transform: uppercase;">$1</h3>');
-                formatted = formatted.replace(/# (.+)/g, '<h2 style="color: #00D9FF; font-size: 1.5rem; margin: 35px 0 20px 0; font-weight: 900; padding-bottom: 12px; border-bottom: 3px solid rgba(0,217,255,0.5);">$1</h2>');
+                formatted = formatted.replace(/### (.+)/g, '<h4 style="color: #00D9FF; font-size: 1.05rem; margin: 16px 0 8px 0; font-weight: 800; padding-left: 10px; border-left: 3px solid #00D9FF;">$1</h4>');
+                formatted = formatted.replace(/## (.+)/g, '<h3 style="color: #FF9900; font-size: 1.2rem; margin: 20px 0 10px 0; font-weight: 900; padding-left: 12px; border-left: 4px solid #FF9900; text-transform: uppercase;">$1</h3>');
+                formatted = formatted.replace(/# (.+)/g, '<h2 style="color: #00D9FF; font-size: 1.35rem; margin: 22px 0 12px 0; font-weight: 900; padding-bottom: 8px; border-bottom: 2px solid rgba(0,217,255,0.5);">$1</h2>');
                 formatted = formatted.replace(/\*\*(.+?)\*\*/g, '<strong style="color: #FF9900; font-weight: 800; background: rgba(255,153,0,0.15); padding: 2px 6px; border-radius: 4px;">$1</strong>');
-                formatted = formatted.replace(/---/g, '<hr style="border: none; height: 3px; background: linear-gradient(90deg, transparent, #FF9900, #00D9FF, transparent); margin: 25px 0; opacity: 0.6;">');
+                formatted = formatted.replace(/---/g, '<hr style="border: none; height: 2px; background: linear-gradient(90deg, transparent, #FF9900, #00D9FF, transparent); margin: 16px 0; opacity: 0.6;">');
                 
                 // Bullets
                 let lines = formatted.split('\n');
@@ -12186,12 +12245,16 @@ AWS Well-Architected Tool
                 let inList = false;
                 for (let i = 0; i < lines.length; i++) {
                     let line = lines[i].trim();
+                    if (line === '|' || line === '') {
+                        if (inList) { result.push('</ul>'); inList = false; }
+                        continue;
+                    }
                     if (line.startsWith('* ')) {
                         if (!inList) {
-                            result.push('<ul style="margin: 16px 0; padding-left: 28px; line-height: 1.8;">');
+                            result.push('<ul style="margin: 10px 0; padding-left: 24px; line-height: 1.6;">');
                             inList = true;
                         }
-                        result.push('<li style="margin: 9px 0; color: rgba(255,255,255,0.94); font-size: 0.96rem;"><span style="color: #FF9900; font-weight: 900; margin-right: 8px;">•</span>' + line.substring(2) + '</li>');
+                        result.push('<li style="margin: 6px 0; color: rgba(255,255,255,0.94); font-size: 0.95rem;"><span style="color: #FF9900; font-weight: 900; margin-right: 6px;">•</span>' + line.substring(2) + '</li>');
                     } else {
                         if (inList) { result.push('</ul>'); inList = false; }
                         result.push(line);
@@ -12201,17 +12264,18 @@ AWS Well-Architected Tool
                 formatted = result.join('\n');
                 
                 formatted = formatted.replace(/→/g, '<span style="color: #00D9FF; font-weight: 900; padding: 0 6px; font-size: 1.2em;">→</span>');
-                formatted = formatted.replace(/\n\n/g, '</p><p style="margin: 14px 0; line-height: 1.7; color: rgba(255,255,255,0.92); font-size: 0.97rem;">');
+                formatted = formatted.replace(/\n\n/g, '<br>');
                 formatted = formatted.replace(/\n/g, '<br>');
+                formatted = formatted.replace(/(<br>\s*){2,}/g, '<br>');
                 
                 content.innerHTML = `
-                    <div style="margin-bottom: 32px; padding: 28px; background: linear-gradient(135deg, rgba(255,153,0,0.12), rgba(0,217,255,0.12)); border-radius: 15px; border: 2px solid rgba(0,217,255,0.35);">
-                        <div style="font-size: 3.2rem; margin-bottom: 14px;">${module.icon}</div>
-                        <h1 style="color: #FF9900; font-size: 2rem; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;">Module ${module.num}</h1>
-                        <h2 style="color: #00D9FF; font-size: 1.35rem; margin: 0; font-weight: 700;">${module.title}</h2>
+                    <div style="margin-bottom: 20px; padding: 22px; background: linear-gradient(135deg, rgba(255,153,0,0.12), rgba(0,217,255,0.12)); border-radius: 14px; border: 2px solid rgba(0,217,255,0.35);">
+                        <div style="font-size: 2.6rem; margin-bottom: 10px;">${module.icon}</div>
+                        <h1 style="color: #FF9900; font-size: 1.7rem; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase; letter-spacing: 1px;">Module ${module.num}</h1>
+                        <h2 style="color: #00D9FF; font-size: 1.2rem; margin: 0; font-weight: 700;">${module.title}</h2>
                     </div>
-                    <div style="padding: 0 12px;">
-                        <p style="margin: 14px 0; line-height: 1.7; font-size: 0.97rem; color: rgba(255,255,255,0.92);">${formatted}</p>
+                    <div style="padding: 0 10px; line-height: 1.6; font-size: 0.95rem; color: rgba(255,255,255,0.92);">
+                        ${formatted}
                     </div>
                 `;
                 content.scrollTop = 0;
