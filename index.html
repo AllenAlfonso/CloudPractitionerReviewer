@@ -11580,7 +11580,10 @@ AWS Well-Architected Tool
             html += '<div style="margin: 10px 0;">Incorrect: <span style="color: #EF4444; font-weight: 700;">' + (quizState.questions.length - correct) + '</span></div>';
             html += '<div style="margin: 10px 0;">Pass Threshold: <span style="color: #FF9900; font-weight: 700;">70%</span></div>';
             html += '</div>';
-            html += '<div style="margin-top: 30px;"><button class="btn" id="btn-retake">Take Another Exam</button></div>';
+            html += '<div style="margin-top: 30px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">';
+            html += '<button class="btn" id="btn-retake">Take Another Exam</button>';
+            html += '<button class="btn btn-secondary" id="btn-view-review">View Exam Review</button>';
+            html += '</div>';
             html += '</div>';
             
             document.getElementById('quiz-content').innerHTML = html;
@@ -11604,6 +11607,20 @@ AWS Well-Architected Tool
                 document.getElementById('btn-short-2').addEventListener('click', () => startExam('short'));
                 document.getElementById('btn-full-2').addEventListener('click', () => startExam('full'));
             });
+
+            const reviewBtn = document.getElementById('btn-view-review');
+            if (reviewBtn) {
+                reviewBtn.addEventListener('click', () => {
+                    const history = JSON.parse(localStorage.getItem('examHistory') || '[]');
+                    if (!history.length || !history[history.length - 1].questions || !history[history.length - 1].questions.length) {
+                        alert('No review data available for this exam yet.');
+                        return;
+                    }
+                    showSection('dashboard');
+                    renderDashboard();
+                    showExamReview(history.length - 1);
+                });
+            }
         }
 
         let pendingSubmitAction = null;
