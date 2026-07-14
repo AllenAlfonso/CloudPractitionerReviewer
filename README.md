@@ -1,5 +1,11 @@
 # CloudPractitionerReviewer
 
+## Live Demo
+
+This app is deployed using AWS S3:
+
+[Open AWS Cloud Practitioner Reviewer](http://awscloudpractitionerreviewer.s3-website-ap-southeast-2.amazonaws.com/)
+
 A single‑page AWS Cloud Practitioner study hub with practice exams, study modules, and flashcards.
 
 
@@ -11,7 +17,7 @@ A single‑page AWS Cloud Practitioner study hub with practice exams, study modu
 - LocalStorage persistence for progress and history
 
 ## How To Use
-1. Open https://allenalfonso.github.io/CloudPractitionerReviewer/ in your browser.
+1. Open the [live AWS S3 deployment](http://awscloudpractitionerreviewer.s3-website-ap-southeast-2.amazonaws.com/) in your browser.
 2. Use the top navigation to switch between Dashboard, Study Guide, Practice Exam, and Flashcards.
 3. Your progress and history are saved locally in your browser.
 
