@@ -6,6 +6,8 @@ This app is deployed using AWS S3:
 
 [Open AWS Cloud Practitioner Reviewer](http://awscloudpractitionerreviewer.s3-website-ap-southeast-2.amazonaws.com/)
 
+Github : https://allenalfonso.github.io/CloudPractitionerReviewer/
+
 A single‑page AWS Cloud Practitioner study hub with practice exams, study modules, and flashcards.
 
 
